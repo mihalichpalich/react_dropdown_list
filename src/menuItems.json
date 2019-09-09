@@ -1,0 +1,13 @@
+{
+  "item1": {
+    "nestedItem1": null,
+    "nestedItem2": {
+      "deeplyNetstedItem1": null
+    }
+  },
+  "item2": null,
+  "item3": null,
+  "item4": {
+    "nestedItem3": null
+  }
+}

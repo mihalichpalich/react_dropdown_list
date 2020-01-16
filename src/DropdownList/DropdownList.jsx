@@ -1,17 +1,28 @@
 import React from "react";
-import $ from "jquery";
-import data from "../menuItems.json";
 
 class DropdownList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      objectItemsNumber: Object.keys(data).length
+      data: this.props.data
     };
   }
 
   render() {
-    return this.state.objectItemsNumber;
+    const createListData = (data) => {
+      Object.keys(data).map(item => {
+          if (data[item]) {
+            console.log(item, data[item]);
+            return <button className='accordion'>{item}</button>
+            createListData(data[item])
+          } else {
+            return <div className='panel'>{item}</div>
+          }
+        }
+      )
+    }
+
+    return <div>{createListData(this.state.data)}</div>
   }
 }
 
